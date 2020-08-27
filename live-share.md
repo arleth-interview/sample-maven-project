@@ -28,3 +28,16 @@ Read through the README that comes up and while you do that I'll setup the LiveS
 4) a prompt (lower right of the window) click "sign in", select "Sign In With GitHub"
 5) FINALLY click the green "Authorize VisualStudioLiveShare"
 
+### first time using live share on the web
+
+The project tree is on the left, open
+
+    sample-maven-project->src->main
+    sample-maven-project->src->test
+
+1) select Main.java and read through the comments
+2) Time to get to work - select PasswordValidator.java
+
+Currently only syntax highlighting and general error reporting is enabled in the web view. If we were to use the desktop version of vs-code, we could both interactively compile and run the project. For your personal project I highly recommend this but for an interview it is usually not a good idea to mess with your github login and IDE ;)
+
+A bash terminal is available in the lower half of the window as read-only. Sorry you can't run code on the interviewers computer. As the interviewer runs or mvn compiles the app you will be able to see errors here.
