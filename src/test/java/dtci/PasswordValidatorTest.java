@@ -12,7 +12,7 @@ public class PasswordValidatorTest {
      * Empty Test :-)
      */
     @Test
-    public void testPassword() {
+    public void emptySampleTest() {
         Assert.assertTrue( true );
     }
 }
