@@ -5,9 +5,9 @@ package dtci;
  */
 public class PasswordPattern {
 
-    private int minCount = 1;
-    private String pattern;
-    private String errorMsg;
+    final int minCount;
+    final String pattern;
+    final String errorMsg;
 
     public PasswordPattern(String pattern, int min, String errMsg) {
         this.minCount = min;
