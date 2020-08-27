@@ -1,6 +1,6 @@
 package dtci;
 
-//import java.util.*;
+import java.util.*;
 //import java.net.*;
 //import java.util.concurrent.*;
 //import java.io.*;
@@ -11,17 +11,19 @@ package dtci;
  */
 public class PasswordValidator {
     int minLength;
-    PasswordPattern[] validPasswordPatterns;
+    List<PasswordPattern> validPasswordPatterns = new ArrayList<>();
 
     /**
      * password validator
      * 
      * @param minLen min length of password
-     * @param code array of character patterns and minimum count to validate
+     * @param patterns array of character patterns and minimum count to validate
      */
     public PasswordValidator(int minLen, PasswordPattern[] patterns) {
         this. minLength = minLen;
-        this.validPasswordPatterns = patterns;
+        if (patterns != null && patterns.length > 0) {
+            this.validPasswordPatterns.addAll(Arrays.asList(patterns));
+        }
     }
 
     /**
@@ -31,10 +33,11 @@ public class PasswordValidator {
      * @return true if password matches all requirements
      */
     public boolean validate(String password) {
-        if (password != null) {
-            throw new UnsupportedOperationException();
-        }
         return false;
+    }
+
+    public void addPasswordPattern(PasswordPattern pattern) {
+        this.validPasswordPatterns.add(pattern);
     }
 
     // getter setters, hashcode, equals, toString

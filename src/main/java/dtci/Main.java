@@ -9,11 +9,11 @@ public class Main {
          at least one "specialChar" of !@#$%^&*()-_
          other chars rejected
         */
-        PasswordValidator app = new PasswordValidator(8, new PasswordPattern[] {
-         new PasswordPattern("number", 1, "at least one numer"), 
-         new PasswordPattern("ascii", 2, "at least 2 ascii characters"),
-         new PasswordPattern("specialChar", 1, "at least one char of !@#$%^&*()-_")
-        });
+        PasswordValidator app = PasswordValidatorBuilder.builder(8).
+            pattern(new PasswordPattern("number", 1, "at least one numer")). 
+            pattern(new PasswordPattern("ascii", 2, "at least 2 ascii characters")).
+            pattern(new PasswordPattern("specialChar", 1, "at least one char of !@#$%^&*()-_")).
+        build();
 
         if (args == null || args.length ==0) {
             System.out.println("valid password " + app.validate("why_hello-there1"));
