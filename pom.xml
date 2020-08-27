@@ -2,11 +2,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>dtci</groupId>
-  <artifactId>interview</artifactId>
+  <artifactId>password-validator</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>interview</name>
-  <url>http://maven.apache.org</url>
+  <name>password-validator</name>
+  <url>https://github.com/arleth-interview/sample-maven-project</url>
   <properties>
     <java.version>14</java.version>
     <maven.compiler.source>14</maven.compiler.source>

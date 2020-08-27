@@ -6,23 +6,23 @@ Welcome!
 
 Define a simple password validator in Java. 
 
-Feel free to use any class provided in the standard jdk 14 libs. I don't want to focus on syntax and put excessive pressure on getting the app to compile. 
+Feel free to use any class provided in the standard Java Class Library (JCL) JDK 14. I don't want to focus on syntax or even put too much pressure on getting the app to compile ;) 
 
-The intent of this little exercise is to use this project as a way to focus our time. Create an avenue to discuss approaches to coding and even write a little code while we're at it ;)
+The intent of this exercise is to use the project as a way of focusing our time. To create a way for us to discuss various approaches to coding and even write a little code along the way
 
-### classes provided
+### the classes provided
 
 #### ./main/java/dtci/PasswordPattern.java 
 
-defines a simple pojo and should not define implementations of valid password patterns, is how values should be parsed and used by the Validator. 
+A simple pojo. This class should not define the implementation of the validator or how password patterns are evaluated on input
 
 #### ./main/java/dtci/PasswordValidator.java
 
-class to be modified to implement password validation.
+Place to implement password validation
 
 #### ./main/java/dtci/Main.java 
 
-demonstrate and execute the validator.  
+Demonstrate and execute the validator with commandline arguments
 
 #### ./test/java/dtci/PasswordValidatorTest.java 
 
