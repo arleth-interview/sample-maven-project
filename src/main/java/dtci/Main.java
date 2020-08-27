@@ -1,5 +1,7 @@
 package dtci;
 
+import java.util.regex.Pattern;
+
 public class Main {
     public static void main(String...args) {
         /*
@@ -9,10 +11,15 @@ public class Main {
          at least one "specialChar" of !@#$%^&*()-_
          other chars rejected
         */
-        PasswordValidator app = PasswordValidatorBuilder.builder(8).
-            pattern(new PasswordPattern("number", 1, "at least one numer")). 
-            pattern(new PasswordPattern("ascii", 2, "at least 2 ascii characters")).
-            pattern(new PasswordPattern("specialChar", 1, "at least one char of !@#$%^&*()-_")).
+        PasswordValidator app = PasswordValidatorBuilder.builder(8, p -> {
+            try { Pattern.compile(p.pattern); } catch (Exception ex) {
+                throw new IllegalArgumentException(p.pattern + " is not a regular expression");
+            }
+            return p;
+        }).
+            pattern(new PasswordPattern("[0-9]", 1, "at least one numer")). 
+            pattern(new PasswordPattern("[a-zA-Z]", 2, "at least 2 ascii characters")).
+            pattern(new PasswordPattern("[!@#$%^&*-_()]", 1, "at least one char of !@#$%^&*()-_")).
         build();
 
         if (args == null || args.length ==0) {
